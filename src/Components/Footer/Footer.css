@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5%;
+}
+
+.footer__text {
+  color: #ffffff;
+  font-family: "Arial - Bold MT";
+  font-size: 1.3vw;
+  font-weight: 400;
+}
