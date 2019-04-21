@@ -1,6 +1,7 @@
-.body__right {
-  width: 26.6%;
+.body__right.right {
+  flex-grow: 1;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

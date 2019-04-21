@@ -1,6 +1,4 @@
 .app {
-  /* max-width: 1440px;
-  max-height: 1024px; */
   width: 100vw;
   height: 100vh;
   background-color: #00b3be;
@@ -12,9 +10,9 @@
   height: 95%;
 }
 
-/* @media screen and (max-width: 1366px) {
+@media screen and (max-width: 800px) {
   .app {
-    min-width: 1024px;
-    min-height: 576px;
+    min-width: 400px;
+    min-height: 285px;
   }
-} */
+}

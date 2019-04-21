@@ -1,0 +1,15 @@
+.form-button.button__text {
+  width: 45.1%;
+  height: 2.9vw;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.button-text.text-value {
+  color: #4a4a4a;
+  font-family: "Arial MT";
+  font-size: 1vw;
+  font-weight: 400;
+}
