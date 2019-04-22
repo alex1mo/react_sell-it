@@ -11,10 +11,14 @@ class Footer extends Component {
           <span className="footer-text text__value">
             2019 - front-end labs Light IT
           </span>
-          <a className="footer-text text__value" href="#" onClick={getPage}>
+          <a className="footer-text text__value" href="/home" onClick={getPage}>
             Home
           </a>
-          <a className="footer-text text__value" href="#" onClick={getPage}>
+          <a
+            className="footer-text text__value"
+            href="/product"
+            onClick={getPage}
+          >
             Product
           </a>
         </div>

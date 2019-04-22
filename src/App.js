@@ -33,5 +33,7 @@ function router(str) {
       return <Home />;
     case "Product":
       return <ProductList />;
+    default:
+      return <Home />;
   }
 }
