@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Left from "./Components/Body/Left/Left";
-import Right from "./Components/Body/Right/Right";
 import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Home/Home";
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="body">
-          <Left />
-          <Right />
-        </div>
+        <Home />
         <Footer />
       </div>
     );

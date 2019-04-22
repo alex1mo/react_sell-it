@@ -7,11 +7,6 @@
   justify-content: center;
 }
 
-.right-form.form__input.input {
-  width: 100%;
-  margin-top: 6.45vh;
-}
-
 .right-form.form__button.button {
   width: 100%;
   display: flex;

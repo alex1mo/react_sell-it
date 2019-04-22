@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./Form.css";
-import Input from "./Input/Input";
 import Button from "./Button/Button";
+import SignIn from "./SignIn/SignIn";
+import SignUp from "./SignUp/SignUp";
 
 class Form extends Component {
   state = {
@@ -22,16 +23,7 @@ class Form extends Component {
           <Button text="Sign In" tab={this.tab} />
           <Button text="Sign Up" tab={this.tab} />
         </div>
-        <form action="#" className="right-form form__input input">
-          {this.state.tab === "Sign Up" && (
-            <Input type="text" placeholder="Name" />
-          )}
-          <Input type="email" placeholder="Email" />
-          <Input type="password" placeholder="Password" />
-          {this.state.tab === "Sign Up" && (
-            <Input type="password" placeholder="Confirm password" />
-          )}
-        </form>
+        {(this.state.tab === "Sign Up" && <SignUp />) || <SignIn />}
         <Button
           text={(this.state.tab === "Sign Up" && "Check in") || "Login"}
         />
