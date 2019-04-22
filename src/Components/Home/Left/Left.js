@@ -5,7 +5,7 @@ import Image from "./Image/Image";
 class Left extends Component {
   render() {
     return (
-      <div className="body__left left">
+      <div className="home__left left">
         <Image />
       </div>
     );

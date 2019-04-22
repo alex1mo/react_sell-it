@@ -18,7 +18,7 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="body-right right__form form">
+      <div className="home-right right__form form">
         <div className="right-form form__button button">
           <Button text="Sign In" tab={this.tab} />
           <Button text="Sign Up" tab={this.tab} />

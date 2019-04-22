@@ -1,0 +1,18 @@
+.productlist {
+  width: 100%;
+  height: 95%;
+  background: white;
+}
+
+.productlist__header.header {
+  width: 100%;
+  height: 10%;
+}
+
+.productlist__items.items {
+  height: 90%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

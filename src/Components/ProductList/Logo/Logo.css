@@ -1,0 +1,11 @@
+.productlist-header.header__logo.logo {
+  position: fixed;
+  top: 0.9vh;
+  left: 4.9vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .productlist-header.header__logo.logo {
+    display: none;
+  }
+}

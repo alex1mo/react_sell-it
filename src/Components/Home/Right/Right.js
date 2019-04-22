@@ -6,7 +6,7 @@ import Form from "./Form/Form";
 class Right extends Component {
   render() {
     return (
-      <div className="body__right right">
+      <div className="home__right right">
         <Logo />
         <Form />
       </div>

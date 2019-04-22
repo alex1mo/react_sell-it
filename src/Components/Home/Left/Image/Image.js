@@ -3,7 +3,7 @@ import "./Image.css";
 
 class Image extends Component {
   render() {
-    return <div className="body-left left__img" />;
+    return <div className="home-left left__img" />;
   }
 }
 

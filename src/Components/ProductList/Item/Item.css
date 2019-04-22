@@ -1,0 +1,27 @@
+.productlist-items.items__item.item {
+  width: 320px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.items-item.item__image {
+  width: 100%;
+  height: 80%;
+}
+
+.items-item.item__title.title {
+  width: 100%;
+  height: 20%;
+  background-color: #00b3be;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 15px;
+  box-sizing: border-box;
+}
+
+.item-title.title__eye {
+  cursor: pointer;
+}

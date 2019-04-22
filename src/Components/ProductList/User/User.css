@@ -1,0 +1,12 @@
+.productlist-header.header__user.user {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 27%;
+  height: 5.75%;
+  padding: 0 1.75vw 0 1.75vw;
+  background-color: #00b3be;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
