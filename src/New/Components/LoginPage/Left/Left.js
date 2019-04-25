@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import "./Left.css";
-import Image from "./Image/Image";
+import HomeLeft from "./styleLeft.js";
+import Image from "../../Common/Image/Image";
 
 class Left extends Component {
   render() {
     return (
-      <div className="home__left left">
+      <HomeLeft color="black" size={20}>
         <Image />
-      </div>
+      </HomeLeft>
     );
   }
 }
