@@ -1,15 +1,15 @@
 import React from "react";
-import "./index.css";
+import Login from "./styleIndex";
 
 import Left from "../Left/Left";
 import Right from "../Right/Right";
 
 const LoginPage = () => {
   return (
-    <div className="login">
+    <Login className="login">
       <Left />
       <Right />
-    </div>
+    </Login>
   );
 };
 

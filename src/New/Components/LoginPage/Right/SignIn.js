@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./SignIn.css";
-import Input from "../Input/Input";
+import Input from "../../Common/Input/Input";
+import { WrapperInput } from "./styleRight";
 
 class SignIn extends Component {
   state = {
@@ -9,10 +9,10 @@ class SignIn extends Component {
 
   render() {
     return (
-      <form action="#" className="right-form form__input input">
+      <WrapperInput action="#" className="right-form form__input input">
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
-      </form>
+      </WrapperInput>
     );
   }
 }

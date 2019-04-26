@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
-const HomeLeft = styled.div`
-  flex-grow: ${props => console.log(props)};
+const LoginLeft = styled.div`
+  flex-grow: 5;
   height: 100%;
   overflow: hidden;
-  @media screen and (max-width: 800px) {
-    display: none;
-  }
 `;
 
-export default HomeLeft;
+const ImgLeft = styled.div`
+  background-image: url(${props => props.img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+  width: 100%;
+  height: 100%;
+`;
 
-//
+export { LoginLeft, ImgLeft };

@@ -1,4 +1,6 @@
-.form-input.input__text {
+import styled from "styled-components";
+
+const StyleInput = styled.input`
   display: block;
   width: 100%;
   border-style: none;
@@ -7,8 +9,9 @@
   margin-bottom: 4.5vh;
   outline: none;
   background: inherit;
-}
+  ::placeholder {
+    color: white;
+  }
+`;
 
-.form-input.input__text::placeholder {
-  color: white;
-}
+export { StyleInput };

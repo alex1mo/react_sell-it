@@ -1,9 +1,17 @@
 @import "../node_modules/normalize.css/normalize.css";
 
-#root {
+// html {
+//   font-size: 32px;
+// }
+
+body {
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
   background-color: #00b3be;
+}
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 16px;
+  }
 }

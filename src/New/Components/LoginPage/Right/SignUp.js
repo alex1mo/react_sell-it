@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./SignUp.css";
-import Input from "../Input/Input";
+import Input from "../../Common/Input/Input";
+import { WrapperInput } from "./styleRight";
 
 class SignUp extends Component {
   state = {
@@ -16,12 +16,12 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form action="#" className="right-form form__input_signup input">
+      <WrapperInput action="#" className="right-form form__input_signup input">
         <Input type="text" placeholder="Name" />
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
         <Input type="password" placeholder="Confirm password" />
-      </form>
+      </WrapperInput>
     );
   }
 }

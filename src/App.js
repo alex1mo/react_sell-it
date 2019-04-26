@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoginPageContainer from "./New/Container/LoginPageContainer";
+import LoginPageContainer from "./New/Containers/LoginPageContainers/LoginPageContainer";
 
 class App extends Component {
   render() {
