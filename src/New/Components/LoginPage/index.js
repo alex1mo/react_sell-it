@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "./styleIndex";
 
-import Left from "../Left/Left";
-import Right from "../Right/Right";
+import Left from "./Left/Left";
+import Right from "./Right/Right";
 
 const LoginPage = () => {
   return (
