@@ -9,14 +9,13 @@ class App extends Component {
     console.log(width);
     if (width <= 1440 && width > 1366) {
       html.style.fontSize = 18 + "px";
-    } else if (width <= 1366 && width > 850) {
+    } else if (width <= 1366 && width > 880) {
       html.style.fontSize = 16 + "px";
-    } else if (width <= 850) {
+    } else if (width <= 880) {
       html.style.fontSize = 10 + "px";
     } else {
-      html.style.fontSize = 32 + "px";
+      html.style.fontSize = 22 + "px";
     }
-
     return <ProductListContainer />;
   }
 }

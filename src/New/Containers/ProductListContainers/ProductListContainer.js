@@ -27,7 +27,6 @@ class ProductListContainer extends Component {
 
   render() {
     let width = this.state.productList.width;
-
     return <ProductList width={width} />;
   }
 }
