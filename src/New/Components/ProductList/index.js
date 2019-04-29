@@ -7,7 +7,7 @@ import Footer from "./Footer/Footer";
 import Item from "./Product/Item";
 
 const ProductList = props => {
-  let { width } = props;
+  let { width, products } = props;
 
   return (
     <Wrapper width={width} className="productlist">
@@ -22,31 +22,16 @@ const ProductList = props => {
       </div>
       <div className="productlist__wrapper">
         <div className="productlist__items items">
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
+          {products &&
+            products.map(product => {
+              return (
+                <Item
+                  key={product.id}
+                  url={product.previewURL}
+                  title={product.id}
+                />
+              );
+            })}
         </div>
       </div>
       <Footer />

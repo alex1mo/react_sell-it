@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../Common/Button/Button";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
@@ -15,7 +16,16 @@ class Form extends Component {
           <Button text="Sign Up" getTab={getTab} />
         </FormButtons>
         {(tab === "Sign Up" && <SignUp />) || <SignIn />}
-        <Button text={(tab === "Sign Up" && "Check in") || "Login"} />
+        <Link
+          to="/product-list"
+          style={{
+            width: 100 + "%",
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
+          <Button text={(tab === "Sign Up" && "Check in") || "Login"} />
+        </Link>
       </LoginForm>
     );
   }

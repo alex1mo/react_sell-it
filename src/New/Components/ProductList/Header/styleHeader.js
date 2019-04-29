@@ -29,7 +29,7 @@ const DivUser = styled.div`
   }
 
   .header-user.user__signout {
-    height: 50%;
+    height: 100%;
     cursor: pointer;
   }
 `;
