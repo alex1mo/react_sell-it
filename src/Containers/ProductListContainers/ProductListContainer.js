@@ -11,14 +11,11 @@ class ProductListContainer extends Component {
 
   componentDidMount() {
     this.getProducts();
-    this.setState({
-      productList: {
-        width: this.getWidthForProductList()
-      }
-    });
+    this.getWidthForProductList();
   }
 
   getProducts() {
+    //http://light-it-04.tk/api/posters/
     fetch(
       "https://pixabay.com/api/?key=10255087-ad858ae5e4adfc8ab26a27a9e&q=computer&category=businessi&image_type=photo&per_page=100"
     )
@@ -33,13 +30,29 @@ class ProductListContainer extends Component {
       .catch(error => console.log(error));
   }
 
+  componentWillUnmount() {
+    document.body.onresize = null;
+  }
+
   getWidthForProductList = () => {
+    let result;
+    let body = document.querySelector("body");
     let wrapper = document.querySelector(".productlist__wrapper");
-    let html = document.querySelector("html");
-    let fontSize = parseFloat(html.style.fontSize);
-    let width = parseInt(getComputedStyle(wrapper).width) - 10;
-    let int = Math.floor(width / (320 + 1.1 * fontSize * 2));
-    return int * (320 + 1.1 * fontSize * 2);
+    let getWidth = () => {
+      let fontSize = parseFloat(getComputedStyle(body).fontSize);
+      let widthWrapper = parseInt(getComputedStyle(wrapper).width) - 10;
+      let int = Math.floor(widthWrapper / (fontSize * 1.1 * 2 + 320));
+      console.log(int);
+      result = (fontSize * 1.1 * 2 + 320) * int;
+      this.setState({
+        productList: {
+          width: result
+        }
+      });
+    };
+
+    body.onresize = getWidth;
+    return getWidth();
   };
 
   render() {
@@ -47,7 +60,6 @@ class ProductListContainer extends Component {
       data,
       productList: { width }
     } = this.state;
-    console.log(data);
     return <ProductList products={data && data.hits} width={width} />;
   }
 }
