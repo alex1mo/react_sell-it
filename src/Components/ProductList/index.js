@@ -4,11 +4,8 @@ import Search from "../Common/Search/Search";
 import logo from "../../materials/images/Sell_it_product.png";
 import User from "./Header/User";
 import Footer from "./Footer/Footer";
-import Item from "./Product/Item";
 
-const ProductList = props => {
-  let { width, products } = props;
-
+const ProductList = ({ width, items }) => {
   return (
     <Wrapper width={width} className="productlist">
       <div className="productlist__header header">
@@ -21,18 +18,7 @@ const ProductList = props => {
         <User />
       </div>
       <div className="productlist__wrapper">
-        <div className="productlist__items items">
-          {products &&
-            products.map(product => {
-              return (
-                <Item
-                  key={product.id}
-                  url={product.previewURL}
-                  title={product.id}
-                />
-              );
-            })}
-        </div>
+        <div className="productlist__items items">{items}</div>
       </div>
       <Footer />
     </Wrapper>

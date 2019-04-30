@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import ProductList from "../../Components/ProductList";
 import { connect } from "react-redux";
-import { fetchProducts } from "../../action"
-
+import { fetchProducts } from "../../action";
+import { Provider } from "react-redux";
+import { store } from "../../App";
+import Item from "../../Components/ProductList/Product/Item";
 
 class ProductListContainer extends Component {
   state = {
@@ -12,6 +14,7 @@ class ProductListContainer extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props);
     this.props.fetchProducts();
     this.getWidthForProductList();
   }
@@ -40,24 +43,36 @@ class ProductListContainer extends Component {
     return getWidth();
   };
 
+  returnItems = data =>
+    data &&
+    data.map(product => {
+      return (
+        <Item key={product.id} url={product.previewURL} title={product.id} />
+      );
+    });
+
   render() {
     let {
       productList: { width }
     } = this.state;
-    let { productList } = this.props
-    let data = productList;
 
-    return <ProductList products={data && data.hits} width={width} />;
+    let {
+      productList: { hits: data }
+    } = this.props;
+
+    return (
+      <Provider store={store}>
+        <ProductList width={width} items={this.returnItems(data)} />
+      </Provider>
+    );
   }
 }
 
 const mapStateToProps = state => ({
   productList: state.productList
-})
+});
 
-const mapDispatchToProps = dispatch => ({
-  fetchProducts: () => dispatch(fetchProducts())
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductListContainer)
+export default connect(
+  mapStateToProps,
+  { fetchProducts }
+)(ProductListContainer);
