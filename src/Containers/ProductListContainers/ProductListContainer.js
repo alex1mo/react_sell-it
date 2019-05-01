@@ -8,22 +8,21 @@ import Item from "../../Components/ProductList/Product/Item";
 
 class ProductListContainer extends Component {
   state = {
-    productList: {
+    productListWrapper: {
       width: null
     }
   };
 
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchProducts();
-    this.getWidthForProductList();
+    this.getWidthForProductListWrapper();
   }
 
   componentWillUnmount() {
     document.body.onresize = null;
   }
 
-  getWidthForProductList = () => {
+  getWidthForProductListWrapper = () => {
     let result;
     let body = document.querySelector("body");
     let wrapper = document.querySelector(".productlist__wrapper");
@@ -33,7 +32,7 @@ class ProductListContainer extends Component {
       let int = Math.floor(widthWrapper / (fontSize * 1.1 * 2 + 320));
       result = (fontSize * 1.1 * 2 + 320) * int;
       this.setState({
-        productList: {
+        productListWrapper: {
           width: result
         }
       });
@@ -43,7 +42,7 @@ class ProductListContainer extends Component {
     return getWidth();
   };
 
-  returnItems = data =>
+  returnArrItem = data =>
     data &&
     data.map(product => {
       return (
@@ -53,7 +52,7 @@ class ProductListContainer extends Component {
 
   render() {
     let {
-      productList: { width }
+      productListWrapper: { width }
     } = this.state;
 
     let {
@@ -62,7 +61,7 @@ class ProductListContainer extends Component {
 
     return (
       <Provider store={store}>
-        <ProductList width={width} items={this.returnItems(data)} />
+        <ProductList width={width} items={this.returnArrItem(data)} />
       </Provider>
     );
   }

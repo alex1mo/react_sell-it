@@ -6,6 +6,8 @@ import User from "./Header/User";
 import Footer from "./Footer/Footer";
 
 const ProductList = ({ width, items }) => {
+  console.log(width);
+
   return (
     <Wrapper width={width} className="productlist">
       <div className="productlist__header header">
