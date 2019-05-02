@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginPageContainer from "./Containers/LoginPageContainers/LoginPageContainer";
 import ProductListContainer from "./Containers/ProductListContainers/ProductListContainer";
-import ProductPage from "./Containers/ProductPage/ProductPage";
+import ProductPageContainer from "./Containers/ProductPageContainer/ProductPageContainer";
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
                 params: { id }
               }
             }) => {
-              return <ProductPage id={id} />;
+              return <ProductPageContainer id={id} />;
             }}
           />
         </Switch>

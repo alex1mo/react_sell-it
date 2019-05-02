@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getProduct } from "../../action";
 
-class ProductPage extends React.Component {
+class ProductPageContainer extends React.Component {
   componentDidMount() {
     let { id, getProduct } = this.props;
     getProduct(id);
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getProduct }
-)(ProductPage);
+)(ProductPageContainer);
