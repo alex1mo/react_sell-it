@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import ProductList from "../../Components/ProductList";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../action";
-import { Provider } from "react-redux";
-import { store } from "../../App";
 import Item from "../../Components/ProductList/Product/Item";
 
 class ProductListContainer extends Component {
@@ -42,28 +40,32 @@ class ProductListContainer extends Component {
     return getWidth();
   };
 
-  returnArrItem = data =>
-    data &&
-    data.map(product => {
-      return (
-        <Item key={product.id} url={product.previewURL} title={product.id} />
-      );
-    });
+  getArrItem = data => {
+    let defaultImg =
+      "http://bldng.info/assets/default_image-a61228fe406c941a065163a232688948cb0e1186d2bc2b2727c073bb20728c67.png";
+    if (data) {
+      return data.map(({ pk, images: img, theme }) => {
+        return (
+          <Item
+            key={pk}
+            id={pk}
+            img={(img.length > 0 && img[0].file) || defaultImg}
+            title={theme}
+          />
+        );
+      });
+    }
+    return null;
+  };
 
   render() {
     let {
       productListWrapper: { width }
     } = this.state;
 
-    let {
-      productList: { hits: data }
-    } = this.props;
+    let { productList } = this.props;
 
-    return (
-      <Provider store={store}>
-        <ProductList width={width} items={this.returnArrItem(data)} />
-      </Provider>
-    );
+    return <ProductList width={width} items={this.getArrItem(productList)} />;
   }
 }
 
