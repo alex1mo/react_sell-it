@@ -1,7 +1,6 @@
 import React from "react";
 import Input from "../../Common/Input/Input";
 import { WrapperInput } from "./styleRight";
-import { reduxForm } from ‘redux - form’
 
 const SignIn = () => {
   return (
@@ -12,10 +11,4 @@ const SignIn = () => {
   );
 };
 
-SignIn = reduxFrom({
-  from: "uniqname"
-})
-
 export default SignIn;
-
-

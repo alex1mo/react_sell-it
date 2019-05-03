@@ -1,6 +1,6 @@
 import React from "react";
 import DivItem from "./styleItem";
-import eye from "../../../materials/images/fa-eye.png";
+import eye from "materials/images/fa-eye.png";
 import { Link } from "react-router-dom";
 
 const Item = props => {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ProductList from "../../Components/ProductList";
+import ProductList from "Components/ProductList";
 import { connect } from "react-redux";
-import { fetchProducts } from "../../action";
-import Item from "../../Components/ProductList/Product/Item";
+import { fetchProducts } from "../../action-creator/products-action";
+import Item from "Components/ProductList/Product/Item";
 
 class ProductListContainer extends Component {
   state = {
@@ -43,7 +43,7 @@ class ProductListContainer extends Component {
   getArrItem = data => {
     let defaultImg =
       "http://bldng.info/assets/default_image-a61228fe406c941a065163a232688948cb0e1186d2bc2b2727c073bb20728c67.png";
-    if (data) {
+    if (data && data.length > 0) {
       return data.map(({ pk, images: img, theme }) => {
         return (
           <Item
@@ -63,14 +63,15 @@ class ProductListContainer extends Component {
       productListWrapper: { width }
     } = this.state;
 
-    let { productList } = this.props;
-
-    return <ProductList width={width} items={this.getArrItem(productList)} />;
+    let {
+      products: { items }
+    } = this.props;
+    return <ProductList width={width} items={this.getArrItem(items)} />;
   }
 }
 
-const mapStateToProps = state => ({
-  productList: state.productList
+const mapStateToProps = ({ products }) => ({
+  products
 });
 
 export default connect(

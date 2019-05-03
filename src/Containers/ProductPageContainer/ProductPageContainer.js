@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getProduct } from "../../action";
+import { getProduct } from "action-creator/product-action";
 
 class ProductPageContainer extends React.Component {
   componentDidMount() {
@@ -10,7 +10,6 @@ class ProductPageContainer extends React.Component {
 
   render() {
     console.log(this.props);
-
     return <div>test</div>;
   }
 }

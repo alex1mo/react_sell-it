@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Form from "../../Components/LoginPage/Right/Form";
+import Form from "Components/LoginPage/Right/Form";
 
 class FormContainer extends Component {
   state = {

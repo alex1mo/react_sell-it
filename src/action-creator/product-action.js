@@ -1,7 +1,3 @@
-export const fetchProducts = () => ({
-  type: "FETCH_PRODUCTS_REQ"
-});
-
 export const getProduct = id => dispatch => {
   fetch(`http://light-it-04.tk/api/posters/${id}/`)
     .then(response => {

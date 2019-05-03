@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import LoginPageContainer from "./Containers/LoginPageContainers/LoginPageContainer";
-import ProductListContainer from "./Containers/ProductListContainers/ProductListContainer";
-import ProductPageContainer from "./Containers/ProductPageContainer/ProductPageContainer";
+import LoginPageContainer from "Containers/LoginPageContainers/LoginPageContainer";
+import ProductListContainer from "Containers/ProductListContainers/ProductListContainer";
+import ProductPageContainer from "Containers/ProductPageContainer/ProductPageContainer";
 
 class App extends Component {
   render() {

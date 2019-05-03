@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DivUser from "./styleHeader.js";
-import signOut from "../../../materials/images/fa-sign-out.png";
-import foto from "../../../materials/images/91.png";
+import signOut from "materials/images/fa-sign-out.png";
+import foto from "materials/images/91.png";
 
 const User = props => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "./styleIndex";
 import Search from "../Common/Search/Search";
-import logo from "../../materials/images/Sell_it_product.png";
+import logo from "materials/images/Sell_it_product.png";
 import User from "./Header/User";
 import Footer from "./Footer/Footer";
 
