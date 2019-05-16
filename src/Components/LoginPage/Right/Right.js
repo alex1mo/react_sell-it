@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginRight, LoginLogo } from "./styleRight";
-import img from "../../../materials/images/Sell_it.png";
-import FormContainer from "../../../Containers/LoginPageContainers/FormContainer";
+import img from "materials/images/Sell_it.png";
+import FormContainer from "Containers/LoginPageContainers/Form";
 
 const Right = () => {
   return (

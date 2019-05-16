@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reduxThunk from "redux-thunk";
-// import { loger } from "./middleware/loger";
 
 import { rootReducer } from "./reducers";
 import rootSaga from "./sagas";
@@ -16,7 +15,7 @@ import rootSaga from "./sagas";
 import createSagaMiddleware from "redux-saga";
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(reduxThunk, sagaMiddleware))
 );

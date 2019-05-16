@@ -1,16 +1,42 @@
 import React from "react";
-import Input from "../../Common/Input/Input";
+
 import { WrapperInput } from "./styleRight";
 
-const SignUp = () => {
+import Input from "../../Common/Input/Input";
+import Button from "../../Common/Button/Button";
+
+import { reduxForm, Field } from "redux-form";
+import { validate } from "../../../utils/validateSignUp";
+
+let SignUp = ({ handleSubmit }) => {
   return (
-    <WrapperInput action="#" className="right-form form__input_signup input">
-      <Input type="text" placeholder="Name" />
-      <Input type="email" placeholder="Email" />
-      <Input type="password" placeholder="Password" />
-      <Input type="password" placeholder="Confirm password" />
+    <WrapperInput
+      onSubmit={handleSubmit(() => console.log("test"))}
+      action="#"
+      className="right-form form__input_signup input"
+    >
+      <Field name="username" component={Input} type="text" placeholder="Name" />
+      <Field name="email" type="email" placeholder="Email" component={Input} />
+      <Field
+        name="password"
+        type="password"
+        placeholder="Password"
+        component={Input}
+      />
+      <Field
+        name="confirmPassword"
+        type="password"
+        placeholder="Confirm password"
+        component={Input}
+      />
+      <Button text="Check in" type="submit" width={45.1} />
     </WrapperInput>
   );
 };
+
+SignUp = reduxForm({
+  form: "signup",
+  validate
+})(SignUp);
 
 export default SignUp;

@@ -1,10 +1,10 @@
 import { reducer as formReducer } from "redux-form";
 import { combineReducers } from "redux";
-import productsReducer from "./products-reducer";
-import productReducer from "./product-reducer";
+import allList from "./products-list/all-list";
+import details from "./products-list/details";
 
 export const rootReducer = combineReducers({
-  products: productsReducer,
-  product: productReducer,
+  products: allList,
+  product: details,
   form: formReducer
 });

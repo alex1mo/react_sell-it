@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Wrapper = styled.button`
-  width: 45.1%;
+  width: ${props => (props.width || 100) + "%"};
   height: 2.5rem;
   background-color: #f2f2f2;
   cursor: pointer;

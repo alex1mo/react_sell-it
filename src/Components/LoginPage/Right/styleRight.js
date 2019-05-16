@@ -22,7 +22,7 @@ const LoginForm = styled.div`
   justify-content: center;
 `;
 
-const FormButtons = styled.div`
+const Tab = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -31,6 +31,9 @@ const FormButtons = styled.div`
 const WrapperInput = styled.form`
   width: 100%;
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export { LoginRight, LoginLogo, LoginForm, FormButtons, WrapperInput };
+export { LoginRight, LoginLogo, LoginForm, Tab, WrapperInput };
