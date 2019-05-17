@@ -24,9 +24,8 @@ const Form = () => {
         </Link>
       </Tab>
       <Switch>
-        <Route exact path="/" component={SignIn} />
-        <Route path="/sign-in" component={SignIn} />
         <Route path="/sign-up" component={SignUp} />
+        <Route path="/" component={SignIn} />
       </Switch>
     </LoginForm>
   );

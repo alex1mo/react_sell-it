@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import ProductList from "Components/ProductList";
+
 import { connect } from "react-redux";
-import { fetchProducts } from "../../action-creator/products-action";
-import Item from "Components/ProductList/Product/Item";
+
+import { fetchProducts } from "action-creator/products-page/products-page";
+
+import ProductsList from "Components/MainPage/Products/ProductsList";
+import Item from "Components/MainPage/Products/Item";
 
 class ProductListContainer extends Component {
   state = {
@@ -64,14 +67,14 @@ class ProductListContainer extends Component {
     } = this.state;
 
     let {
-      products: { items }
+      items: { data }
     } = this.props;
-    return <ProductList width={width} items={this.getArrItem(items)} />;
+    return <ProductsList width={width} items={this.getArrItem(data)} />;
   }
 }
 
-const mapStateToProps = ({ products }) => ({
-  products
+const mapStateToProps = ({ items }) => ({
+  items
 });
 
 export default connect(

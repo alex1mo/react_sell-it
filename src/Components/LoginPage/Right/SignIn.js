@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
@@ -11,6 +12,12 @@ import Button from "../../Common/Button/Button";
 import { validate } from "utils/validateSignIn";
 
 import { authentication } from "action-creator/login-page/login-page";
+
+const styleLink = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center"
+};
 
 let SignIn = ({ handleSubmit, signin, authentication }) => {
   console.log(signin && signin.values);
@@ -27,7 +34,9 @@ let SignIn = ({ handleSubmit, signin, authentication }) => {
         type="password"
         placeholder="Password"
       />
-      <Button text="Login" type="submit" width={45.1} />
+      <Link to="/main" style={styleLink}>
+        <Button text="Login" type="submit" width={45.1} />
+      </Link>
     </WrapperInput>
   );
 };

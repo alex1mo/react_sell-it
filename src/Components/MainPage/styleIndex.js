@@ -4,12 +4,17 @@ import Login from "../LoginPage/styleIndex";
 const Wrapper = styled(Login)`
   display: block;
   background-color: white;
-  .productlist__header.header {
+  .mainPage__header.header {
     width: 100%;
     height: 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .mainPage-header.header__logo {
+    height: 80%;
+    margin-left: 3rem;
   }
 
   .productlist__wrapper {
@@ -25,11 +30,6 @@ const Wrapper = styled(Login)`
     width: ${props => props.width + "px"};
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .productlist-header.header__logo {
-    height: 80%;
-    margin-left: 3rem;
   }
 `;
 

@@ -28,4 +28,18 @@ const DivItem = styled.div`
   }
 `;
 
-export default DivItem;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 87%;
+  overflow: auto;
+  box-sizing: border-box;
+  .productlist__items.items {
+    width: ${props => props.width + "px"};
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
+
+export { DivItem, Wrapper };

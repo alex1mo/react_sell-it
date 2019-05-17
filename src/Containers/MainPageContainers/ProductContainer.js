@@ -9,13 +9,12 @@ class ProductPageContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return <div>test</div>;
   }
 }
 
-const mapStateToProps = state => ({
-  product: state.product
+const mapStateToProps = ({ product }) => ({
+  product
 });
 
 export default connect(

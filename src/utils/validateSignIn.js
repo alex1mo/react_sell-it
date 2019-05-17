@@ -3,7 +3,7 @@ export const validate = values => {
 
   // USERNAME
   if (!values.email) {
-    errors.username = "Username is required";
+    errors.email = "Email is required";
   }
 
   // PASSWORD

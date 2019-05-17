@@ -22,7 +22,6 @@ function* watchAuth() {
 }
 
 function* auth({ data }) {
-  console.log(data);
   try {
     const result = yield call(authRequest, data);
     yield put({ type: signIn.success, payload: result.data });
