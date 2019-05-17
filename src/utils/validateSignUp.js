@@ -18,19 +18,19 @@ export const validate = values => {
   }
 
   // PASSWORD
-  if (!values.password) {
-    errors.password = "Password is required";
-  } else if (values.password.length < 8) {
-    errors.password = "Enter more than 8 characters!";
-  } else if (!passwordRegex.test(values.password)) {
-    errors.password = "Must include  one letter and one numeric";
+  if (!values.password1) {
+    errors.password1 = "Password is required";
+  } else if (values.password1.length < 8) {
+    errors.password1 = "Enter more than 8 characters!";
+  } else if (!passwordRegex.test(values.password1)) {
+    errors.password1 = "Must include  one letter and one numeric";
   }
 
   // PASSWORD CONFIRMATION
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Please, confirm your password";
-  } else if (values.password !== values.confirmPassword) {
-    errors.confirmPassword = "Your passwords don't match";
+  if (!values.password2) {
+    errors.password2 = "Please, confirm your password";
+  } else if (values.password1 !== values.password2) {
+    errors.password2 = "Your passwords don't match";
   }
 
   return errors;

@@ -1,3 +1,6 @@
-import createType from "../create-type";
+import { requestType } from "../create-type";
 
-let login_page = createType("login_page");
+let signUp = requestType("sign-up")("REGISTRATION");
+let signIn = requestType("sign-in")("AUTHENTICATION");
+
+export { signUp, signIn };

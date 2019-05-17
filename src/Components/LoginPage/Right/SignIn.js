@@ -1,21 +1,26 @@
 import React from "react";
 
+import { connect } from "react-redux";
+import { reduxForm, Field } from "redux-form";
+
 import { WrapperInput } from "./styleRight";
 
 import Input from "../../Common/Input/Input";
 import Button from "../../Common/Button/Button";
 
-import { reduxForm, Field } from "redux-form";
-import { validate } from "../../../utils/validateSignIn";
+import { validate } from "utils/validateSignIn";
 
-let SignIn = ({ handleSubmit }) => {
+import { authentication } from "action-creator/login-page/login-page";
+
+let SignIn = ({ handleSubmit, signin, authentication }) => {
+  console.log(signin && signin.values);
   return (
     <WrapperInput
-      onSubmit={handleSubmit(() => console.log("test"))}
+      onSubmit={handleSubmit(() => authentication(signin && signin.values))}
       action="#"
       className="right-form form__input input"
     >
-      <Field name="username" component={Input} type="text" placeholder="Name" />
+      <Field name="email" type="email" placeholder="Email" component={Input} />
       <Field
         name="password"
         component={Input}
@@ -32,4 +37,11 @@ SignIn = reduxForm({
   validate
 })(SignIn);
 
-export default SignIn;
+const mapStateToProps = ({ login, form: { signin } }) => {
+  return { login, signin };
+};
+
+export default connect(
+  mapStateToProps,
+  { authentication }
+)(SignIn);

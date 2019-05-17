@@ -2,7 +2,7 @@ export const validate = values => {
   const errors = {};
 
   // USERNAME
-  if (!values.username) {
+  if (!values.email) {
     errors.username = "Username is required";
   }
 
