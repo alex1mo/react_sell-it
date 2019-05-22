@@ -1,4 +1,4 @@
-import { signUp, signIn } from "action-type/login-page/login-page";
+import { userAuth } from "action-type/login-page/login-page";
 
 const initialState = {
   isLoading: null,
@@ -8,16 +8,13 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case signUp.request:
-    case signIn.request:
+    case userAuth.request:
       return {
         isLoading: false
       };
-    case signUp.success:
-    case signIn.success:
+    case userAuth.success:
       return { isLoading: true, isLoadingError: false, data: action.payload };
-    case signUp.failure:
-    case signIn.failure:
+    case userAuth.failure:
       return { isLoading: true, isLoadingError: true, data: action.payload };
     default:
       return state;

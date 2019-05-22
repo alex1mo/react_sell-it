@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import { connect } from "react-redux";
+
 import DivUser from "./styleHeader.js";
+
 import signOut from "materials/images/fa-sign-out.png";
 import foto from "materials/images/91.png";
 
-const User = props => {
+const User = ({ login }) => {
   return (
     <DivUser className="productlist-header header__user user">
       <div className="header-user user__name name">
@@ -22,4 +26,8 @@ const User = props => {
   );
 };
 
-export default User;
+const mapStateToProps = ({ login }) => ({
+  login
+});
+
+export default connect(mapStateToProps)(User);

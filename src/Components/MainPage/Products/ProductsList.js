@@ -1,11 +1,11 @@
 import React from "react";
-import { Wrapper } from "./ProductsStyle";
+import { Products } from "./ProductsStyle";
 
 const ProductsList = ({ items, width }) => {
   return (
-    <Wrapper width={width} className="productlist__wrapper">
+    <Products width={width} className="productlist__wrapper">
       <div className="productlist__items items">{items}</div>
-    </Wrapper>
+    </Products>
   );
 };
 

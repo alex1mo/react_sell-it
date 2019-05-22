@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import LoginPage from "Components/LoginPage/LoginPage";
-import MainPage from "Components/MainPage/MainPage";
+import MainPage from "./Components/MainPage/MainPage";
+import AuthRequired from "./hoc/AuthRequired";
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/main" component={MainPage} />
-          <Route path="/" component={LoginPage} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route
+          path="/main/products-list/item"
+          component={AuthRequired(MainPage)}
+        />
+        <Route path="/main/products-list" component={AuthRequired(MainPage)} />
+        <Route path="/" component={LoginPage} />
+      </Switch>
     );
   }
 }

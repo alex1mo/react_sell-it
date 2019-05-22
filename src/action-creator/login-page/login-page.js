@@ -1,4 +1,4 @@
-import { signUp, signIn } from "action-type/login-page/login-page";
+import { signUp, signIn, userAuth } from "action-type/login-page/login-page";
 
 export const registration = data => {
   return {
@@ -13,3 +13,8 @@ export const authentication = data => {
     data
   };
 };
+
+export const authorization = token => ({
+  type: userAuth.request,
+  token
+});

@@ -2,10 +2,12 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-import { fetchProducts } from "action-creator/products-page/products-page";
+import { fetchProducts } from "action-creator/main-page/main-page";
 
 import ProductsList from "Components/MainPage/Products/ProductsList";
 import Item from "Components/MainPage/Products/Item";
+
+import defaultImg from "materials/images/default_image.png";
 
 class ProductListContainer extends Component {
   state = {
@@ -44,8 +46,6 @@ class ProductListContainer extends Component {
   };
 
   getArrItem = data => {
-    let defaultImg =
-      "http://bldng.info/assets/default_image-a61228fe406c941a065163a232688948cb0e1186d2bc2b2727c073bb20728c67.png";
     if (data && data.length > 0) {
       return data.map(({ pk, images: img, theme }) => {
         return (
@@ -69,6 +69,7 @@ class ProductListContainer extends Component {
     let {
       items: { data }
     } = this.props;
+
     return <ProductsList width={width} items={this.getArrItem(data)} />;
   }
 }

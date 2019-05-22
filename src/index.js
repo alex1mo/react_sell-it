@@ -1,30 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "index.scss";
-import App from "App";
-import * as serviceWorker from "serviceWorker";
+import { Router } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import reduxThunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
+
+import { createBrowserHistory } from "history";
+import interseptors from "./api-cli/interseptors";
 
 import { rootReducer } from "./reducers";
+import { authorization } from "action-creator/login-page/login-page";
+
 import rootSaga from "./sagas";
 
-import createSagaMiddleware from "redux-saga";
+import "index.scss";
+import App from "App";
+import * as serviceWorker from "serviceWorker";
+
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(reduxThunk, sagaMiddleware))
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(rootSaga);
 
+export const history = createBrowserHistory();
+interseptors(store, history);
+
+let token = localStorage.getItem("token");
+store.dispatch(authorization(token));
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById("root")
 );

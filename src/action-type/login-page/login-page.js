@@ -1,6 +1,9 @@
 import { requestType } from "../create-type";
 
-let signUp = requestType("sign-up")("REGISTRATION");
-let signIn = requestType("sign-in")("AUTHENTICATION");
+const login = requestType("login");
 
-export { signUp, signIn };
+let signUp = login("REGISTRATION");
+let signIn = login("AUTHENTICATION");
+let userAuth = login("AUTHORIZATION");
+
+export { signUp, signIn, userAuth };

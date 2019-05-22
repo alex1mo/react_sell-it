@@ -4,30 +4,38 @@ import { signUp, signIn } from "action-type/login-page/login-page";
 
 import { regRequest, authRequest } from "api-cli/login";
 
+import { history } from "index";
+
 function* watchReg() {
-  yield takeEvery(signUp.request, reg);
+  yield takeEvery(signUp.request, registration);
 }
 
-function* reg({ data }) {
+function* registration({ data }) {
   try {
     const result = yield call(regRequest, data);
     yield put({ type: signUp.success, payload: result.data });
   } catch (error) {
-    yield put({ type: signUp.failure, payload: error.response.data });
+    yield put({ type: signUp.failure, payload: error });
   }
 }
 
 function* watchAuth() {
-  yield takeEvery(signIn.request, auth);
+  yield takeEvery(signIn.request, authentication);
 }
 
-function* auth({ data }) {
+function* authentication({ data }) {
   try {
     const result = yield call(authRequest, data);
+    yield localStorage.setItem("token", result.data.token);
     yield put({ type: signIn.success, payload: result.data });
-    sessionStorage.setItem("token", result.data.token);
+    yield result.data.token &&
+      result.data.user &&
+      history.push("/main/products-list");
   } catch (error) {
-    yield put({ type: signIn.failure, payload: error.response.data });
+    yield put({
+      type: signIn.failure,
+      payload: error
+    });
   }
 }
 

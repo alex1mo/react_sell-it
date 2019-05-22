@@ -1,9 +1,9 @@
 import { put, call, takeEvery } from "redux-saga/effects";
-import { details, allList } from "action-type/products-page/products-page";
+import { details, allList } from "action-type/main-page/main-page";
 import {
   getProduct as getItem,
   fetchProducts as fetchItems
-} from "api-cli/products-page";
+} from "api-cli/main-page";
 
 function* watchGetProduct() {
   yield takeEvery(details.request, getProduct);

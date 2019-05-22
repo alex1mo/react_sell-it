@@ -28,7 +28,7 @@ const DivItem = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Products = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -42,4 +42,14 @@ const Wrapper = styled.div`
   }
 `;
 
-export { DivItem, Wrapper };
+const Details = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 87%;
+  overflow: auto;
+  box-sizing: border-box;
+`;
+
+export { DivItem, Products, Details };

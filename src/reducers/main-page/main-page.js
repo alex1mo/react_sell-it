@@ -1,4 +1,4 @@
-import { details, allList } from "action-type/products-page/products-page";
+import { details, allList } from "action-type/main-page/main-page";
 
 const initialState = {
   isLoading: null,
@@ -8,13 +8,16 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case allList.request || details.request:
+    case allList.request:
+    case details.request:
       return {
         isLoading: false
       };
-    case allList.success || details.success:
+    case allList.success:
+    case details.success:
       return { isLoading: true, isLoadingError: false, data: action.payload };
-    case allList.failure || details.failure:
+    case allList.failure:
+    case details.failure:
       return { isLoading: true, isLoadingError: true, data: action.payload };
     default:
       return state;

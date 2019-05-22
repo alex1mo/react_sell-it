@@ -1,4 +1,4 @@
-import { details, allList } from "action-type/products-page/products-page";
+import { details, allList } from "action-type/main-page/main-page";
 
 export const getProduct = id => ({
   type: details.request,

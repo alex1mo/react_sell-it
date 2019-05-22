@@ -9,7 +9,7 @@ const Item = props => {
   let { title, img, id } = props;
 
   return (
-    <Link to={`/product-list/items:${id}`}>
+    <Link to={`/main/products-list/item:${id}`}>
       <DivItem className="productlist-items items__item item">
         <img
           className="items-item item__image"
