@@ -1,9 +1,9 @@
-import { requestType } from "../create-type";
+import createType from "../create-type";
 
-const login = requestType("login");
+const login = createType("login");
 
-let signUp = login("REGISTRATION");
-let signIn = login("AUTHENTICATION");
-let userAuth = login("AUTHORIZATION");
+let signUp = login.requestType("REGISTRATION");
+let signIn = login.requestType("AUTHENTICATION");
+let userAuth = login.requestType("AUTHORIZATION");
 
 export { signUp, signIn, userAuth };

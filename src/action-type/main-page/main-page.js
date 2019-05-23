@@ -1,8 +1,9 @@
-import { requestType } from "../create-type";
+import createType from "../create-type";
 
-const main = requestType("main");
+const main = createType("main");
 
-let allList = main("FETCH_PRODUCTS");
-let details = main("GET_PRODUCT");
+let allList = main.requestType("FETCH_PRODUCTS");
+let details = main.requestType("GET_PRODUCT");
+let userMenu = main.Type("CHANGE_USER_MENU");
 
-export { allList, details };
+export { allList, details, userMenu };

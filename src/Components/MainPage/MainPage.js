@@ -10,6 +10,8 @@ import Footer from "./Footer/Footer";
 import ProductsListContainer from "Containers/MainPageContainers/ProductsListContainer";
 import DetailProductContainer from "Containers/MainPageContainers/DetailProductContainer";
 
+import { Form, Profile } from "./Products/ProductsStyle";
+
 import logo from "materials/images/Sell_it_product.png";
 
 const MainPage = ({ location: { pathname } }) => {
@@ -22,6 +24,11 @@ const MainPage = ({ location: { pathname } }) => {
         <User />
       </div>
       <Switch>
+        <Route path="/main/profile" render={() => <Form>profile</Form>} />
+        <Route
+          path="/main/products-list/add"
+          render={() => <Profile>form</Profile>}
+        />
         <Route
           path="/main/products-list/item::id"
           component={DetailProductContainer}

@@ -10,11 +10,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route
-          path="/main/products-list/item"
-          component={AuthRequired(MainPage)}
-        />
-        <Route path="/main/products-list" component={AuthRequired(MainPage)} />
+        <Route path="/main" component={AuthRequired(MainPage)} />
         <Route path="/" component={LoginPage} />
       </Switch>
     );

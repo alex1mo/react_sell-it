@@ -9,6 +9,7 @@ const DivUser = styled.div`
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
+  position: relative;
 
   .header-user.user__name {
     display: flex;
@@ -32,6 +33,35 @@ const DivUser = styled.div`
     height: 100%;
     cursor: pointer;
   }
+  :hover {
+    .sub-menu {
+      display: flex;
+    }
+  }
 `;
 
-export default DivUser;
+const DivMenu = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  left: 0px;
+  height: 100%;
+  background-color: #00b3be;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  hr {
+    height: 95%;
+    margin: 0;
+  }
+  a {
+    font-size: 1rem;
+    color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+`;
+
+export { DivUser, DivMenu };

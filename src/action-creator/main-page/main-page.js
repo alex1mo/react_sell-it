@@ -1,4 +1,4 @@
-import { details, allList } from "action-type/main-page/main-page";
+import { details, allList, userMenu } from "action-type/main-page/main-page";
 
 export const getProduct = id => ({
   type: details.request,
@@ -8,5 +8,11 @@ export const getProduct = id => ({
 export const fetchProducts = () => {
   return {
     type: allList.request
+  };
+};
+
+export const changeUserMenu = () => {
+  return {
+    type: userMenu
   };
 };
