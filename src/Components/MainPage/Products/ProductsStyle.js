@@ -52,24 +52,4 @@ const Details = styled.div`
   box-sizing: border-box;
 `;
 
-const Form = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 87%;
-  overflow: auto;
-  box-sizing: border-box;
-`;
-
-const Profile = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 87%;
-  overflow: auto;
-  box-sizing: border-box;
-`;
-
-export { DivItem, Products, Details, Form, Profile };
+export { DivItem, Products, Details };

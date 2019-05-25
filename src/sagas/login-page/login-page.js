@@ -27,7 +27,7 @@ function* authentication({ data }) {
   try {
     const result = yield call(authRequest, data);
     yield localStorage.setItem("token", result.data.token);
-    yield put({ type: signIn.success, payload: result.data });
+    yield put({ type: signIn.success, payload: result.data.token });
     yield result.data.token &&
       result.data.user &&
       history.push("/main/products-list");

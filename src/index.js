@@ -11,7 +11,6 @@ import { createBrowserHistory } from "history";
 import interseptors from "./api-cli/interseptors";
 
 import { rootReducer } from "./reducers";
-import { authorization } from "action-creator/login-page/login-page";
 
 import rootSaga from "./sagas";
 
@@ -30,9 +29,6 @@ sagaMiddleware.run(rootSaga);
 
 export const history = createBrowserHistory();
 interseptors(store, history);
-
-let token = localStorage.getItem("token");
-store.dispatch(authorization(token));
 
 ReactDOM.render(
   <Provider store={store}>

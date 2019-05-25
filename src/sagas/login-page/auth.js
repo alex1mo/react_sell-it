@@ -10,13 +10,7 @@ function* watchUserAuth() {
 
 function* authorization({ token }) {
   try {
-    const result = yield call(
-      authVerify,
-      { token },
-      {
-        Authorization: `JWT ${token}`
-      }
-    );
+    const result = yield call(authVerify, { token });
     yield put({ type: userAuth.success, payload: result });
   } catch (error) {
     yield put({

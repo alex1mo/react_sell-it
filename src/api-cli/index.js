@@ -10,7 +10,8 @@ const request = (method, path, data = {}, headers = {}) => {
   });
 };
 
-export const getRequest = path => request("GET", path);
+export const getRequest = (path, headers) =>
+  request("GET", path, null, headers);
 
 export const postRequest = (path, data, headers) =>
   request("POST", path, data, headers);
