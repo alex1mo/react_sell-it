@@ -46,7 +46,7 @@ export class User extends Component {
             src={avatar || defaultAvatar}
             alt="User Foto"
           />
-          <span className="user-name name__text">{username || null}</span>
+          <span className="user-name name__text">{username || ""}</span>
         </div>
         <Link to="/" style={{ height: 50 + "%" }}>
           <img
