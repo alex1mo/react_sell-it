@@ -13,7 +13,7 @@ import { TokenContext } from "hoc/AuthRequired.js";
 import signOut from "materials/images/fa-sign-out.png";
 import defaultAvatar from "materials/images/default-user.png";
 
-class User extends Component {
+export class User extends Component {
   static contextType = TokenContext;
 
   state = {
@@ -21,7 +21,7 @@ class User extends Component {
   };
 
   shouldComponentUpdate({ user }) {
-    if (user.isLoading && !user.isLoadingError) {
+    if (!user.isLoading && !user.isLoadingError) {
       if (!this.state.userData) {
         this.setState({ userData: true });
       }

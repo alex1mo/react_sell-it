@@ -13,7 +13,7 @@ export default function(ComposedComponent) {
     };
 
     shouldComponentUpdate({ auth }) {
-      if (auth.isLoading && !auth.isLoadingError) {
+      if (!auth.isLoading && !auth.isLoadingError) {
         return true;
       }
       return false;

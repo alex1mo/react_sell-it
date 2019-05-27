@@ -10,12 +10,13 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case userAuth.request:
       return {
-        isLoading: false
+        ...state,
+        isLoading: true
       };
     case userAuth.success:
-      return { isLoading: true, isLoadingError: false, data: action.payload };
+      return { ...state, isLoading: false, data: action.payload };
     case userAuth.failure:
-      return { isLoading: true, isLoadingError: true, data: action.payload };
+      return { isLoading: false, isLoadingError: true, data: action.payload };
     default:
       return state;
   }

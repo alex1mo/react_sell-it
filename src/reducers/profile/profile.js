@@ -1,6 +1,6 @@
 import { getProfile } from "action-type/login-page/login-page";
 
-const initialState = {
+export const initialState = {
   isLoading: null,
   isLoadingError: null,
   data: null
@@ -10,12 +10,13 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case getProfile.request:
       return {
-        isLoading: false
+        ...state,
+        isLoading: true
       };
     case getProfile.success:
-      return { isLoading: true, isLoadingError: false, data: action.payload };
+      return { ...state, isLoading: false, data: action.payload };
     case getProfile.failure:
-      return { isLoading: true, isLoadingError: true, data: action.payload };
+      return { isLoading: false, isLoadingError: true, data: action.payload };
     default:
       return state;
   }

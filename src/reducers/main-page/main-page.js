@@ -11,14 +11,15 @@ export default function(state = initialState, action) {
     case allList.request:
     case details.request:
       return {
-        isLoading: false
+        ...state,
+        isLoading: true
       };
     case allList.success:
     case details.success:
-      return { isLoading: true, isLoadingError: false, data: action.payload };
+      return { ...state, isLoading: false, data: action.payload };
     case allList.failure:
     case details.failure:
-      return { isLoading: true, isLoadingError: true, data: action.payload };
+      return { isLoading: false, isLoadingError: true, data: action.payload };
     default:
       return state;
   }
