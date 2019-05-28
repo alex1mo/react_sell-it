@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { profile } from "action-creator/login-page/login-page.js";
+import { profile } from "action-creator/login-page/login-page";
 
 import { DivUser } from "./styleHeader.js";
 
 import Menu from "./Menu.js";
 
-import { TokenContext } from "hoc/AuthRequired.js";
+import { TokenContext } from "hoc/AuthRequired";
 
 import signOut from "materials/images/fa-sign-out.png";
 import defaultAvatar from "materials/images/default-user.png";
