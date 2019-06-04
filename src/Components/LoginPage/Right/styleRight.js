@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const LoginRight = styled.div`
-  flex-grow: 1;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,4 +36,11 @@ const WrapperInput = styled.form`
   align-items: center;
 `;
 
-export { LoginRight, LoginLogo, LoginForm, Tab, WrapperInput };
+const Error = styled.div`
+  color: red;
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+`;
+
+export { LoginRight, LoginLogo, LoginForm, Tab, WrapperInput, Error };

@@ -1,7 +1,7 @@
 import { signUp, signIn } from "action-type/login-page/login-page";
 
 const initialState = {
-  isLoading: null,
+  isLoading: true,
   isLoadingError: null,
   data: null
 };

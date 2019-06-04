@@ -1,10 +1,9 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { Fragment } from "react";
 
 import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
 
-import { WrapperInput } from "./styleRight";
+import { WrapperInput, Error } from "./styleRight";
 
 import Input from "../../Common/Input/Input";
 import Button from "../../Common/Button/Button";
@@ -13,7 +12,7 @@ import { validate } from "utils/validateSignIn";
 
 import { authentication } from "action-creator/login-page/login-page";
 
-let SignIn = ({ handleSubmit, signin, authentication }) => {
+let SignIn = ({ handleSubmit, signin, authentication, login }) => {
   return (
     <WrapperInput
       onSubmit={handleSubmit(() => authentication(signin && signin.values))}
@@ -27,7 +26,14 @@ let SignIn = ({ handleSubmit, signin, authentication }) => {
         type="password"
         placeholder="Password"
       />
-      <Button text="Login" type="submit" width={45.1} />
+      <Button
+        text={(!login.isLoading && "Login...") || "Login"}
+        type="submit"
+        width={45.1}
+      />
+      {login.isLoadingError && (
+        <Error>{login.data.data.non_field_errors[0]}</Error>
+      )}
     </WrapperInput>
   );
 };

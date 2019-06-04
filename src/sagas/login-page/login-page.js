@@ -34,7 +34,7 @@ function* authentication({ data }) {
   } catch (error) {
     yield put({
       type: signIn.failure,
-      payload: error
+      payload: error.response
     });
   }
 }
