@@ -24,7 +24,7 @@ export const changeUserMenu = () => {
 
 export const searchProducts = value => {
   return {
-    type: search,
+    type: search.request,
     value
   };
 };

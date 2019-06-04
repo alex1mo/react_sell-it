@@ -4,12 +4,13 @@ import { connect } from "react-redux";
 import DivSearch from "./styleSearch";
 import icon from "materials/images/fa-search.png";
 
-import { getProduct } from "action-creator/main-page/main-page.js";
+import {
+  searchProducts,
+  fetchProducts
+} from "action-creator/main-page/main-page.js";
 
-const Search = ({ getProduct, items }) => {
+const Search = ({ searchProducts, fetchProducts }) => {
   let [value, setValue] = useState(null);
-
-  // console.log(items);
 
   return (
     <DivSearch icon={icon} className="productlist-header header__search search">
@@ -19,9 +20,9 @@ const Search = ({ getProduct, items }) => {
         type="text"
         placeholder="Try find something"
         onInput={e => setValue(e.target.value)}
-        onKeyDown={e => {
+        onKeyUp={e => {
           if (e.keyCode === 13) {
-            console.log(value);
+            value && value.length > 0 ? searchProducts(value) : fetchProducts();
           }
         }}
       />
@@ -29,11 +30,7 @@ const Search = ({ getProduct, items }) => {
   );
 };
 
-const mapStateToProps = ({ items }) => ({
-  items
-});
-
 export default connect(
-  mapStateToProps,
-  { getProduct }
+  null,
+  { searchProducts, fetchProducts }
 )(Search);

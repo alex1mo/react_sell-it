@@ -42,14 +42,20 @@ function* fetchProducts() {
 function* watchSearchProducts() {
   yield takeEvery(search.request, searchProducts);
 }
+// theme
 
 function* searchProducts({ value }) {
-  console.log(value);
   try {
-    const result = yield call(fetchItems);
+    let result = yield call(fetchItems);
+    result = result.data.data.filter(e => {
+      let { theme } = e;
+      if (theme.indexOf(value) !== -1) {
+        return e;
+      }
+    });
     yield put({
       type: search.success,
-      payload: result.data.data
+      payload: result
     });
   } catch (error) {
     yield put({ type: search.failure, payload: error });

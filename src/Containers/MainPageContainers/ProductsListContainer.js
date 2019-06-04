@@ -66,11 +66,15 @@ class ProductListContainer extends Component {
       productListWrapper: { width }
     } = this.state;
 
-    let {
-      items: { data }
-    } = this.props;
+    let { data, isLoading } = this.props.items;
 
-    return <ProductsList width={width} items={this.getArrItem(data)} />;
+    return (
+      <ProductsList
+        width={width}
+        items={this.getArrItem(data)}
+        status={isLoading}
+      />
+    );
   }
 }
 

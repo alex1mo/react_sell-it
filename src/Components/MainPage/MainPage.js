@@ -16,6 +16,11 @@ import { Form } from "./Profile/ProfileStyle";
 import logo from "materials/images/Sell_it_product.png";
 
 const MainPage = ({ history }) => {
+  let search = true;
+  if (history.location.pathname !== "/main/products-list") {
+    search = false;
+  }
+
   return (
     <Wrapper className="mainPage">
       <div className="mainPage__header header">
@@ -25,7 +30,7 @@ const MainPage = ({ history }) => {
           className="mainPage-header header__logo"
           onClick={() => history.push("/main/products-list")}
         />
-        <Search />
+        {(search && <Search />) || null}
         <User />
       </div>
       <Switch>
