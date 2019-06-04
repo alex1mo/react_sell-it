@@ -18,8 +18,13 @@ const DetailsProduct = ({ item }) => {
         />
       </Details>
     );
+  } else {
+    return (
+      <Details>
+        <div>Loading...</div>
+      </Details>
+    );
   }
-  return null;
 };
 
 export default DetailsProduct;

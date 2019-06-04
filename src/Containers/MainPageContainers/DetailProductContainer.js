@@ -16,6 +16,7 @@ class DetailProductContainer extends React.Component {
     return <DetailsProduct item={data} />;
   }
 }
+
 const mapStateToProps = ({ items: { data } }) => ({
   data
 });

@@ -15,6 +15,7 @@ const Wrapper = styled(Login)`
   .mainPage-header.header__logo {
     height: 80%;
     margin-left: 3rem;
+    cursor: pointer;
   }
 
   .productlist__wrapper {

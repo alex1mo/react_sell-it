@@ -1,5 +1,10 @@
 import { put, call, takeEvery } from "redux-saga/effects";
-import { details, allList } from "action-type/main-page/main-page";
+import {
+  details,
+  allList,
+  searchProducts as search
+} from "action-type/main-page/main-page";
+
 import {
   getProduct as getItem,
   fetchProducts as fetchItems
@@ -34,4 +39,21 @@ function* fetchProducts() {
   }
 }
 
-export default [watchGetProduct(), watchFetchProducts()];
+function* watchSearchProducts() {
+  yield takeEvery(search.request, searchProducts);
+}
+
+function* searchProducts({ value }) {
+  console.log(value);
+  try {
+    const result = yield call(fetchItems);
+    yield put({
+      type: search.success,
+      payload: result.data.data
+    });
+  } catch (error) {
+    yield put({ type: search.failure, payload: error });
+  }
+}
+
+export default [watchGetProduct(), watchFetchProducts(), watchSearchProducts()];

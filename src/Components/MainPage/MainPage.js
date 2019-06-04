@@ -15,11 +15,16 @@ import { Form } from "./Profile/ProfileStyle";
 
 import logo from "materials/images/Sell_it_product.png";
 
-const MainPage = () => {
+const MainPage = ({ history }) => {
   return (
     <Wrapper className="mainPage">
       <div className="mainPage__header header">
-        <img src={logo} alt="Logo" className="mainPage-header header__logo" />
+        <img
+          src={logo}
+          alt="Home"
+          className="mainPage-header header__logo"
+          onClick={() => history.push("/main/products-list")}
+        />
         <Search />
         <User />
       </div>

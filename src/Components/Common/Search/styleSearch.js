@@ -11,6 +11,7 @@ const DivSearch = styled.div`
   box-sizing: border-box;
 
   .header-search.search__input.input {
+    width: 100%;
     height: 100%;
     padding-left: 0.5rem;
     outline: none;
